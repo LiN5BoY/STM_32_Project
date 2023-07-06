@@ -19,7 +19,7 @@ void Key_Init(void){
 
 uint8_t Key_GetNum(){
 	
-	uint8_t KeyNum = 20;
+	uint8_t KeyNum = 0;
 	
 	if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_1) == 0){
 		//被摁下的情况

@@ -3,28 +3,29 @@
 #include "Delay.h"
 #include "Key.h"
 #include "OLED.h"
-#include "PWM.h"
+#include "Servo.h"
 
-uint8_t i;
+uint8_t keyNum;
+float angle;
 
 int main(void){
 	
 	
 	OLED_Init();
-	PWM_Init();	
+	Servo_Init();
+	Key_Init();
+	
+	OLED_ShowString(1,1,"Angle:");
 	
 	while(1){
-		
-		for(i = 0 ; i <= 100 ; i++){
-			PWM_SetCompare1(i);
-			Delay_ms(10);
+		keyNum = Key_GetNum();
+		if(keyNum == 1){
+			angle+=30;
+			if(angle > 180)
+				angle = 0;
 		}
-
-		for(i = 0 ; i <= 100 ; i++){
-			PWM_SetCompare1(100 - i);
-			Delay_ms(10);
-		}
-
+		Servo_SetAngle(angle);
+		OLED_ShowNum(1,7,angle,3);
 	}
 
 	
