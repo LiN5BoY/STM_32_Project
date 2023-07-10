@@ -36,5 +36,5 @@ void MyDMA_Transfer(void){
     DMA_Cmd(DMA1_Channel1,ENABLE);
     //等待转运完成
     while(DMA_GetFlagStatus(DMA1_FLAG_TC1) == RESET);
-    
+    DMA_ClearFlag(DMA1_FLAG_TC1);    
 }   
