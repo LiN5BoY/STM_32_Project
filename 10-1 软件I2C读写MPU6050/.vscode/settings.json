@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "AD.C": "cpp",
+        "stm32f10x.h": "c",
+        "stdio.h": "c",
+        "oled.h": "c",
+        "key.h": "c",
+        "delay.h": "c",
+        "myi2c.h": "c",
+        "mpu6050_reg.h": "c"
+    }
+}
