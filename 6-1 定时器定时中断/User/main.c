@@ -15,7 +15,7 @@ int main(void){
 	
 	while(1){
 		
-		OLED_ShowNum(1,5,Num,5);	
+		OLED_ShowNum(1,5,Num,5);
 	
 	}
 

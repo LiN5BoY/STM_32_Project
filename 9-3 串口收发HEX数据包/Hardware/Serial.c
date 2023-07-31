@@ -106,7 +106,7 @@ void Serial_Printf(char *format,...){
 
 
 
-uint8_t Seral_GetRxFlag(void){
+uint8_t Serial_GetRxFlag(void){
     if (Serial_RxFlag == 1){
         Serial_RxFlag = 0;
         return 1;
@@ -138,7 +138,7 @@ void USART1_IRQHandler(void){
             if(RxData == '\n'){
                 RxState = 0;
                 Serial_RxFlag = 1;
-                Serial_RxPacket[pRxPacket] = '\0'
+                Serial_RxPacket[pRxPacket] = '\0';
             }
         }
         USART_ClearITPendingBit(USART1,USART_IT_RXNE);// 清除标志位
